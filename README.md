@@ -68,4 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# b610-learning-platform-client-side-iratul010" 
+"# b610-learning-platform-client-side-iratul010"
+
+/// Basic project setup
+
+- create-react-app
+- 1st step create git-hub
+- install firebase
+- install react-router-dom
+- install bootstrap & react-bootstrap
+- make sure to import bootstrap css in the index.js
+  //Router Setup
