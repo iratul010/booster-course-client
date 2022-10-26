@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div>
-      <p>Copyright Coming soon</p>
+    <div className="text-center ">
+      <p className="py-10">copyright © all right is reserved by Ratul Islam</p>
     </div>
   );
 };
