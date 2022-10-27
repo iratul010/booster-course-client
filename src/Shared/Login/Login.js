@@ -6,8 +6,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Col, Row } from "react-bootstrap";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
+  const { providerLogin } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,7 +19,17 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
   };
-
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <Row className="justify-content-center min-vh-100 ">
       <Col lg="5">
@@ -50,7 +64,7 @@ const Login = () => {
             <div className="  mt-4">
               <h4 className="w-100  border-bottom m-3 p-4"> Or Sign In With</h4>
               <ButtonGroup vertical>
-                <Button variant="outline-dark" className="mb-2">
+                <Button variant="outline-dark" className="mb-2" onClick={handleGoogleSignIn}>
                   <FaGoogle /> Login with Google
                 </Button>
                 <Button variant="outline-dark" className="mb-2">

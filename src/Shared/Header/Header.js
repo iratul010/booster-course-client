@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import LeftSideNav from "../LeftSideNav.js/LeftSideNav";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
+import { Image } from "react-bootstrap";
+
 const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark " className="mb-5">
       <Container>
@@ -38,21 +43,42 @@ const Header = () => {
               <Form.Check type="switch" id="custom-switch" label="Check this switch" />
             </Form>
           </nav>
-          <Nav>
+          <Nav className="text-center">
             <Nav href="#deets">
-              <Link to="/login" className="text-decoration-none text-white me-2">
-                Login
-              </Link>
+              {user?.uid ? (
+                <>
+                  <Link className="text-decoration-none text-white me-2" to="/">
+                    Logout
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Nav>
+                    {" "}
+                    <Link className="text-decoration-none text-white me-2" to="/login">
+                      Login
+                    </Link>
+                  </Nav>
+                  <Nav>
+                    <Link className="text-decoration-none text-white me-2" to="/register">
+                      Register
+                    </Link>
+                  </Nav>
+                </>
+              )}
             </Nav>
-            <Nav eventKey={2} href="#memes">
-              <Link className="text-decoration-none text-white me-2" to="/register">
-                Register
-              </Link>
-            </Nav>
+            {/* <Nav eventKey={2} href="#memes">
+             
+            </Nav> */}
             <Nav eventKey={2} href="#memes">
               <Link className="text-decoration-none">
-                <img src="" alt="" />
-                pppp
+                {user?.uid ? (
+                  <Image style={{ height: "35px" }} src={user.photoURL} roundedCircle></Image>
+                ) : (
+                  <div style={{ fontSize: "20px" }} className="border-0 p-0 m-0">
+                    <FaUserCircle />
+                  </div>
+                )}
               </Link>
             </Nav>
           </Nav>
