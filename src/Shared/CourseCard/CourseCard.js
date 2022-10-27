@@ -6,10 +6,10 @@ import { FaBookmark, FaShareAlt } from "react-icons/fa";
 const CourseCard = ({ category }) => {
   const { _id, title, author, details, image_url, total_view } = category;
   return (
-    <Card className="m-4 ">
+    <Card className="d-flex m-4  shadow border">
       <Card.Header className="d-flex justify-content-between align-items-center">
         <div className="d-flex">
-          <Image className="me-2" roundedCircle style={{ height: "60px" }} src={author.img}></Image>
+          <Image className="me-2 rounded shadow" roundedCircle style={{ height: "60px" }} src={author.img}></Image>
           <div className="">
             <p className="mb-0">{author.name}</p> <p>{author.published_date}</p>
           </div>
@@ -21,12 +21,12 @@ const CourseCard = ({ category }) => {
       </Card.Header>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Img variant="top" src={image_url} />
+        <Card.Img className=" rounded" variant="top" src={image_url} style={{ height: "200px" }} />
         <Card.Text>
           {details.length > 100 ? (
             <>
-              {details.slice(0, 100) + "..."}
-              <Link to={`/news/${_id}`}> Read More</Link>{" "}
+              {details.slice(0, 100)}
+              <Link to={`/course/${_id}`}> Read More...</Link>{" "}
             </>
           ) : (
             <> {details}</>

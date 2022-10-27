@@ -7,7 +7,7 @@ import Header from "../Shared/Header/Header";
 
 const Main = () => {
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "90vh" }}>
       <Header></Header>
       <Outlet></Outlet>
       <Footer></Footer>

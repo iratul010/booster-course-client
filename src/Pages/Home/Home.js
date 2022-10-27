@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import home from "../../Assets/Brands/home.png";
 const Home = () => {
   return (
-    <div style={{ height: "90vh" }}>
+    <div className="container mx-auto min-vh-100">
       <Card classNameName="container" bg="light">
         <div className="d-flex align-items-center p-5">
           <div className="row no-gutters justify-content-center align-items-center">

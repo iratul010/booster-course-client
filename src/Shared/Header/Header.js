@@ -23,12 +23,12 @@ const Header = () => {
               </Link>
             </Nav>
             <Nav>
-              <Link to="/courses" className="text-decoration-none text-white me-3">
+              <Link to="/faq" className="text-decoration-none text-white me-3">
                 FAQ
               </Link>
             </Nav>
             <Nav>
-              <Link to="/courses" className="text-decoration-none text-white me-3">
+              <Link to="/blog" className="text-decoration-none text-white me-3">
                 Blog
               </Link>
             </Nav>
@@ -39,10 +39,16 @@ const Header = () => {
             </Form>
           </nav>
           <Nav>
-            <Nav.Link href="#deets">Login</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Register
-            </Nav.Link>
+            <Nav href="#deets">
+              <Link to="/login" className="text-decoration-none text-white me-2">
+                Login
+              </Link>
+            </Nav>
+            <Nav eventKey={2} href="#memes">
+              <Link className="text-decoration-none text-white me-2" to="/register">
+                Register
+              </Link>
+            </Nav>
             <Nav eventKey={2} href="#memes">
               <Link className="text-decoration-none">
                 <img src="" alt="" />

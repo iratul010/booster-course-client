@@ -7,17 +7,18 @@ import AllCourse from "../AllCourse/AllCourse";
 
 const Courses = () => {
   const allCourses = useLoaderData();
+
   return (
-    <div style={{ height: "100vh" }} className="container">
+    <div className="container min-vh-100 d-none d-lg-block">
       <h2 className="text-center">All Courses</h2>
       <Row className="container">
-        <Col lg="2">
+        <Col lg="2" className="m-0">
           <LeftSideNav></LeftSideNav>
         </Col>
         <Col lg="10">
-          <div className="row row-cols-4 row-cols-lg-4 g-3 g-lg-2">
-            {allCourses.map((course) => (
-              <AllCourse course={course}></AllCourse>
+          <div className="row row-cols-4 row-cols-lg-4 g-3 g-lg-2 ">
+            {allCourses.map((course, i) => (
+              <AllCourse key={i} course={course}></AllCourse>
             ))}
           </div>
         </Col>

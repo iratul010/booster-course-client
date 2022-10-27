@@ -6,10 +6,10 @@ const Category = () => {
   const categories = useLoaderData();
 
   return (
-    <div className="container ">
-      <div className="row  row-cols-2 row-cols-lg-4 g-4 g-lg-4">
-        {categories.map((category) => (
-          <CourseCard category={category}></CourseCard>
+    <div className="  container mx-auto min-vh-100">
+      <div className=" container row mx-auto p-0 m-0  row-cols row-cols-lg-4 g-3 g-lg-4  ">
+        {categories.map((category, i) => (
+          <CourseCard key={i} category={category}></CourseCard>
         ))}
       </div>
     </div>
