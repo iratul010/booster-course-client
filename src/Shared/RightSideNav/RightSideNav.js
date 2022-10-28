@@ -5,12 +5,17 @@ import Card from "react-bootstrap/Card";
 import BrandCarousel from "../BrandCarousel/BrandCarousel";
 import video from "../../Assets/Video/video.mp4";
 import { FaEye, FaClock } from "react-icons/fa";
+import PdfDownloader from "../../PdfDownloder/PdfDownloader";
+import { Link } from "react-router-dom";
+import PurchaseConfirm from "../../Pages/PurchaseConfirm/PurchaseConfirm";
+
 const RightSideNav = ({ selectedCourse }) => {
-  const { price, total_view } = selectedCourse;
+  const [modalShow, setModalShow] = React.useState(false);
+  const { title, price, total_view } = selectedCourse;
   return (
-    <Row>
+    <Row id="pageToDownload" className=" container p-0 mx-auto">
       <Col lg="12">
-        <Card className="p-2 border-0 bg-white shadow" style={{ width: "18rem" }}>
+        <Card className="p-0  border-0 bg-white shadow" style={{ width: "18rem" }}>
           <div className="embed-responsive embed-responsive-16by9">
             {/* <iframe className="embed-responsive-item" src={video} allowfullscreen></iframe> */}
             <video className="m-3" controls muted autoplay style={{ height: "200px", width: "250px" }}>
@@ -40,12 +45,19 @@ const RightSideNav = ({ selectedCourse }) => {
               <small className="fs-3 text-black ">{price || " 8$"}</small>
             </Card.Title>
           </Card.Body>
-          <Button variant="primary" className="mb-2">
+          {/* <Link to="/confirm" className="w-100 text-decoration-none text-white">
+            <Button variant="primary" className="mb-2 w-100">
+              PURCHASE
+            </Button>
+          </Link> */}
+          <Button variant="primary" className="mb-2 " onClick={() => setModalShow(true)}>
             PURCHASE
           </Button>
-          <Button className="text-white" variant="info">
-            DOWNLOAD PDF
-          </Button>
+
+          <PurchaseConfirm selectedCourse={selectedCourse} show={modalShow} onHide={() => setModalShow(false)} />
+          {/*  */}
+          <PdfDownloader roofElementId="pageToDownload" downloadFileName={title}></PdfDownloader>
+
           <BrandCarousel></BrandCarousel>
         </Card>
       </Col>

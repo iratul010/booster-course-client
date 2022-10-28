@@ -9,11 +9,11 @@ const PurchasePage = () => {
   const { title, author, details, image_url, total_view, price } = selectedCourse;
 
   return (
-    <div className="container min-vh-100 ">
-      <Row className="g-2 justify-content-between align-items-start  ">
-        <Col lg="7 shadow bg-white rounded">
+    <div className=" container container-lg  mx-auto min-vh-100 ">
+      <Row className="justify-content-between">
+        <Col lg="7 shadow bg-white rounded  ">
           <Card className="text-center border-0">
-            <img className="rounded" src={image_url} alt="" />
+            <img className="rounded w-70" src={image_url} alt="" />
 
             <Card.Body>
               <Card.Title>
@@ -24,7 +24,7 @@ const PurchasePage = () => {
             <Card.Footer className="text-muted">Released on june 16</Card.Footer>
           </Card>
         </Col>
-        <Col lg="3" p="2">
+        <Col lg="3" className="m-3 p-0">
           <RightSideNav selectedCourse={selectedCourse}></RightSideNav>
         </Col>
       </Row>

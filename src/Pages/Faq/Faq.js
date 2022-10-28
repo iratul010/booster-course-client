@@ -2,8 +2,8 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <div>
-      <h2>This is Faq</h2>
+    <div className="min-vh-100 container mx-auto">
+      <h2>FAQ is Comming Soon...</h2>
     </div>
   );
 };

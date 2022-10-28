@@ -5,9 +5,11 @@ import Category from "../../Pages/Category/Category/Category";
 import Courses from "../../Pages/Courses/Courses";
 import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home";
+import PurchaseConfirm from "../../Pages/PurchaseConfirm/PurchaseConfirm";
 import PurchasePage from "../../Pages/PurchasePage/PurchasePage";
 import Login from "../../Shared/Login/Login";
 import Register from "../../Shared/Register/Register";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
   {
@@ -20,18 +22,27 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/category/:id",
-        element: <Category></Category>,
-        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <Category></Category>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) => fetch(`https://booster-courses-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/courses",
         element: <Courses></Courses>,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://booster-courses-server.vercel.app/courses"),
       },
       {
         path: "/course/:id",
-        element: <PurchasePage></PurchasePage>,
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <PurchasePage></PurchasePage>
+          </PrivateRoutes>
+        ),
+
+        loader: ({ params }) => fetch(`https://booster-courses-server.vercel.app/course/${params.id}`),
       },
       {
         path: "/login",

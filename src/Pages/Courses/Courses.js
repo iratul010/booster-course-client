@@ -2,14 +2,14 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Outlet, useLoaderData } from "react-router-dom";
 
-import LeftSideNav from "../../Shared/LeftSideNav.js/LeftSideNav";
+import LeftSideNav from "../../Shared/LeftSideNav/LeftSideNav";
 import AllCourse from "../AllCourse/AllCourse";
 
 const Courses = () => {
   const allCourses = useLoaderData();
 
   return (
-    <div className="container min-vh-100 d-none d-lg-block">
+    <div className="container min-vh-100 d-none  d-lg-block">
       <h2 className="text-center">All Courses</h2>
       <Row className="container">
         <Col lg="2" className="m-0">

@@ -4,10 +4,10 @@ import CourseCard from "../../../Shared/CourseCard/CourseCard";
 
 const Category = () => {
   const categories = useLoaderData();
-
+  console.log("courses", categories);
   return (
     <div className="  container mx-auto min-vh-100">
-      <div className=" container row mx-auto p-0 m-0  row-cols row-cols-lg-4 g-3 g-lg-4  ">
+      <div className=" row  row-cols row-cols-lg-3 g-4  ">
         {categories.map((category, i) => (
           <CourseCard key={i} category={category}></CourseCard>
         ))}

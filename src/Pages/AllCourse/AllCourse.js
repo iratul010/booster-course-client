@@ -8,7 +8,7 @@ const AllCourse = ({ course }) => {
   console.log(_id);
 
   return (
-    <Card className="shadow border-0 m-2 p-2 " style={{ width: "18rem" }}>
+    <Card className="shadow border-0 m-2  " style={{ width: "18rem" }}>
       <div style={{ height: "180px" }}>
         <Card.Img className="shadow rounded" variant="top" style={{ height: "100%" }} src={image_url} />
       </div>
@@ -18,7 +18,7 @@ const AllCourse = ({ course }) => {
           <Button variant="primary">Details</Button>
         </Link>
       </Card.Body>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-around">
         <p className="fw-semibold">{price || "8$"}</p>
         <p className="">
           <FaEye /> <small>{total_view || "230"}</small>

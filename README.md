@@ -78,4 +78,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - install react-router-dom
 - install bootstrap & react-bootstrap
 - make sure to import bootstrap css in the index.js
-  //Router Setup
+
+* create more needed folder step by step
+* install react-icons
+
+- create server side-data
+- create server-side index & port
+- Router Setup
+- create home-page,shared-age,
+- create login page,
+- create-register page
+
+* login & register > contact with authContext flowed by step by step setup
+*
