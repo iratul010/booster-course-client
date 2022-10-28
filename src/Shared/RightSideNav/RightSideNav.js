@@ -6,7 +6,7 @@ import BrandCarousel from "../BrandCarousel/BrandCarousel";
 import video from "../../Assets/Video/video.mp4";
 import { FaEye, FaClock } from "react-icons/fa";
 import PdfDownloader from "../../PdfDownloder/PdfDownloader";
-import { Link } from "react-router-dom";
+
 import PurchaseConfirm from "../../Pages/PurchaseConfirm/PurchaseConfirm";
 
 const RightSideNav = ({ selectedCourse }) => {
@@ -17,7 +17,6 @@ const RightSideNav = ({ selectedCourse }) => {
       <Col lg="12">
         <Card className="p-0  border-0 bg-white shadow" style={{ width: "18rem" }}>
           <div className="embed-responsive embed-responsive-16by9">
-            {/* <iframe className="embed-responsive-item" src={video} allowfullscreen></iframe> */}
             <video className="m-3" controls muted autoplay style={{ height: "200px", width: "250px" }}>
               <source src={video} type="video/mp4"></source>
             </video>
