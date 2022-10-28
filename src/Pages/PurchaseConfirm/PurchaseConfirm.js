@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 const PurchaseConfirm = (props) => {
-  const { title, image_url, total_view, price } = props.selectedCourse;
+  const { title, image_url } = props.selectedCourse;
   const { user } = useContext(AuthContext);
   console.log(user);
   return (

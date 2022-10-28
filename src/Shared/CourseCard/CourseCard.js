@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import { FaBookmark, FaShareAlt } from "react-icons/fa";
 const CourseCard = ({ category }) => {
-  const { _id, title, author, details, image_url, total_view } = category;
+  const { _id, title, author, details, image_url } = category;
   return (
     <div>
       <Card className="d-flex justify-content-center   shadow border">
