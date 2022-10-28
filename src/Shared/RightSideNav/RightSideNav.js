@@ -45,11 +45,7 @@ const RightSideNav = ({ selectedCourse }) => {
               <small className="fs-3 text-black ">{price || " 8$"}</small>
             </Card.Title>
           </Card.Body>
-          {/* <Link to="/confirm" className="w-100 text-decoration-none text-white">
-            <Button variant="primary" className="mb-2 w-100">
-              PURCHASE
-            </Button>
-          </Link> */}
+
           <Button variant="primary" className="mb-2 " onClick={() => setModalShow(true)}>
             PURCHASE
           </Button>
