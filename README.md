@@ -90,4 +90,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - create-register page
 
 * login & register > contact with authContext flowed by step by step setup
-*
+* login page setup clearly
+* register page setup clearly
