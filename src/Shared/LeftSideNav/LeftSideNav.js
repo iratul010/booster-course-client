@@ -15,8 +15,6 @@ const LeftSideNav = () => {
 
   return (
     <div className="text-black   text-center p-0   d-lg-block shadow border-0 ">
-      {/* <h4 className="text-white lg-text-black">All Categories</h4> */}
-
       <Card>
         <h4 className="  lg-text-black">All Categories</h4>
         <ListGroup variant="flush">

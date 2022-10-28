@@ -6,7 +6,7 @@ import RightSideNav from "../../Shared/RightSideNav/RightSideNav";
 import { Col, Row } from "react-bootstrap";
 const PurchasePage = () => {
   const selectedCourse = useLoaderData();
-  const { title, author, details, image_url, total_view, price } = selectedCourse;
+  const { title, details, image_url } = selectedCourse;
 
   return (
     <div className=" container container-lg  mx-auto min-vh-100 ">
